@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #6665ee;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background: #fff;
+    border-radius: 6px;
+    max-width: 380px;
+    width: 100%;
+    padding: 25px;
+}
+
+.wrapper header {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.wrapper .poll-area {
+    margin: 20px 0 15px 0;
+}
+
+.poll-area label {
+    display: block;
+    border-radius: 6px;
+    margin: 8px 15px;
+    border: 3px solid #e6e6e6;
+    transition: all 0.2s ease;
+} 
+
+label .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:5px;
+}
+
+label .row .circle {
+    height: 19px;
+    width: 19px;
+    position: relative;
+    display: block;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+}
+
+label.selected .row .circle {
+    border-color: #6665ee;
+}  
+
+label .row span {
+    font-size: 16px;
+    font-weight: 500;
+} 
+
+.column {
+    display: flex;
+    margin: 10px 3px;
+}
+
+label .row .percent {
+    display: none;
+}
+
+label .progress {
+    height: 7px;
+    width: 100%;
+    position: relative;
+    margin: 8px 0 3px 0;
+    background: #f0f0f0;
+    border-radius: 30px;
+    display: none;
+}
+
+label.selected {
+    border-color: #6665ee;
+}
+
+label.selected .row .circle::after {
+    display: block;
+    background: #e6e6e6 important;
+}
+
+
+label .progress::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: calc(1% * var(--w));
+    background: #ccc;
+    border-radius: inherit;
+}
+
+label.selected .progress::after {
+    background: #6665ee;
+}
+
+label.selectell :is(.percent , .progress) {
+    display: block;
+}
+
+.row .circle::after {
+    content: "";
+    position: absolute;
+    height: 11px;
+    width: 11px;
+    background: #6665ee;
+    top: 2px;
+    left: 2px;
+    border-radius: inherit;
+    display: none;
+}
+
+label:hover .row .circle::after {
+    display: block;
+    background: #e6e6e6;
+}
